@@ -1,0 +1,646 @@
+/* Global Styling */
+
+body {
+    margin: 0em;
+    padding: 0em;
+    font-family: var(--default-font-family);
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #fb5849;
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    /*------BORDER RADIUS-------*/
+    --border-radius: 2rem;
+    --card-border-radius: 1rem;
+    /*----------FONT-----------*/
+    --default-font-size: 16px;
+    --default-font-family: poppins;
+    --paragraph-font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    font-size: var(--paragraph-font-size);
+}
+
+section {
+    padding: 5rem 0;
+}
+
+
+/*===============SCROLL BUTTON===============*/
+
+header {
+    position: fixed;
+    height: 10vh;
+    background: #fff;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+}
+
+#button {
+    display: inline-block;
+    background-color: var(--primary);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 1px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+#button::after {
+    content: "\f102";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.5em;
+    line-height: 40px;
+    color: #fff;
+}
+
+#button:hover {
+    cursor: pointer;
+    background-color: #333;
+    background-color: var(--dark);
+}
+
+#button:active {
+    background-color: #555;
+}
+
+#button.show {
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+}
+
+
+/*=================PLAY BUTTON===============*/
+
+.button {
+    display: inline-block;
+    background-color: var(--primary);
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    transition: all 1s ease-in-out;
+    margin-top: 35%;
+    left: 40%;
+    cursor: pointer;
+}
+
+.button::after {
+    content: "\f144";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 60px;
+    color: #fff;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+
+/*======================== HEADER==================== */
+
+.contain {
+    width: 100%;
+    height: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list {
+    display: none;
+}
+
+.logo {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
+
+/* NAV-LIST */
+
+.menu-icon {
+    display: inline-block;
+    cursor: pointer;
+    top: 2rem;
+    right: 2rem;
+    position: absolute;
+    z-index: 10000;
+}
+
+.bar1,
+.bar3 {
+    width: 3rem;
+    height: 0.3rem;
+    background-color: var(--primary);
+    margin: 6px 0;
+    transition: 1s;
+}
+
+.bar2 {
+    width: 3.3rem;
+    height: 0.3rem;
+    background-color: #000;
+    opacity: 0.7;
+    margin: 6px 0;
+    transition: 1s;
+}
+
+
+/*------ROTATE BARs-----*/
+
+.change .bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: rotate(45deg) translate(-9px, -6px);
+}
+
+
+/*---------------NAV LIST---------------*/
+
+.menu-item {
+    text-decoration: none;
+    color: #000;
+    font-size: var(--default-font-size);
+    transition: 500ms;
+    display: block;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    position: relative;
+    cursor: pointer;
+    background-color: white;
+}
+
+.menu-item.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+#nav-list {
+    display: none;
+    justify-content: space-between;
+    margin-left: 5%;
+    background-color: white;
+    text-align: center;
+    margin-top: 20%;
+    width: 90%;
+    position: fixed;
+    z-index: 99999;
+}
+
+#nav-list hr {
+    opacity: 0.1;
+}
+
+
+/* KLASSY KAFE */
+
+.klassy-cafe {
+    background-image: url(/img/top-left-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    line-height: 0.5;
+    padding: 2rem 0;
+    top: 10vh;
+}
+
+.klassy-cafe h1 {
+    text-align: center;
+    color: white;
+    font-family: cursive;
+    font-size: 3rem;
+}
+
+.klassy-cafe p {
+    font-size: var(--default-font-size);
+    text-align: center;
+    color: white;
+}
+
+.reservation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reservation button {
+    width: fit-content;
+    padding: .75rem 2rem;
+    border-style: none;
+    background-color: white;
+    color: var(--primary);
+    cursor: pointer;
+    transition: all 650ms ease-in-out;
+}
+
+.reservation button:hover {
+    background-color: var(--primary);
+    color: white;
+    border: solid 1px white;
+}
+
+
+/* SLIDESHOW */
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    min-height: 100%;
+    min-width: 100%;
+    position: relative;
+    display: inline-block;
+    max-width: none;
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    top: 10vh;
+}
+
+
+/* Caption text */
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+/*==============================ABOUT US============================*/
+
+#about-us {
+    margin-top: 20vh;
+}
+
+.about-header-topic {
+    display: flex;
+    margin: 0 2vh;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about-header-topic h2 {
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.line {
+    background-color: var(--primary);
+    height: 0.1rem;
+    width: 2rem;
+}
+
+.leave {
+    font-size: 30px;
+    width: 70%;
+    margin: 0 15%;
+}
+
+#about-us .about-text {
+    width: 80%;
+    margin: 5% 10%;
+    font-size: 0.85rem;
+}
+
+.about-images {
+    width: 90%;
+    display: flex;
+    gap: 1rem;
+    margin: 0 5%;
+}
+
+.about-images img {
+    width: 100%;
+}
+
+.about-video {
+    margin: 10vh 5%;
+    width: 90%;
+}
+
+.about-video img {
+    width: 100%;
+}
+
+
+/*============================OUR MENU======================*/
+
+.our-menu {
+    background: #fffafa;
+    height: auto;
+    width: 100%;
+    padding: 5vh 0;
+}
+
+.leave-2 {
+    font-size: 30px;
+    width: 70%;
+    margin: 0 15%;
+}
+
+.our-menu .about-header-topic {
+    margin: 0 15%;
+}
+
+.cake-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.item-1 {
+    width: 90%;
+    position: relative;
+    margin: 0 5%;
+    overflow: hidden;
+}
+
+.item-1 img {
+    width: 100%;
+}
+
+.price {
+    background-color: var(--primary);
+    color: white;
+    width: 5%;
+    padding: 1rem 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cake-text {
+    width: 100%;
+    color: white;
+    background-color: var(--primary);
+    padding: 0.2rem;
+    position: absolute;
+    bottom: -9rem;
+    line-height: 2;
+    transition: 1s all ease;
+    cursor: pointer;
+}
+
+.cake-text:hover {
+    bottom: 0;
+}
+
+.text-bold {
+    padding-top: 2%;
+    padding-bottom: 3%;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: Agency FB;
+}
+
+.text-muted {
+    font-size: 13px;
+    padding: 1rem;
+}
+
+.cake-text a {
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin: 0;
+    text-decoration: underline;
+    padding-bottom: 1rem;
+}
+
+.cake-text a:hover {
+    color: black;
+}
+
+
+/*=======================DESKTOP MEDIA QUERY===================*/
+
+@media (max-width: 2000px) and (min-width: 1000px) {
+    .klassy-cafe {
+        line-height: 1;
+    }
+    .nav-list {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        margin-left: 40%;
+        margin-top: 6%;
+    }
+    .menu-icon {
+        display: none;
+    }
+    hr {
+        display: none;
+    }
+    .logo {
+        margin-left: 15%;
+    }
+    .klassy {
+        display: flex;
+        flex-direction: row;
+        height: 80vh;
+        margin-top: 2vh;
+    }
+    .klassy-cafe {
+        height: 100%;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+    }
+    .mySlides img {
+        height: 88.2vh;
+        width: 100%;
+    }
+    .dot {
+        display: none;
+    }
+    #about-us {
+        display: flex;
+        width: 80%;
+        margin: 30vh 10%;
+    }
+    .about-video {
+        width: 100%;
+        margin-top: 7vh;
+    }
+    .our-menu {
+        background: #fffafa;
+        height: auto;
+        width: 100%;
+        padding: 5vh 0;
+    }
+    .cake-items {
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+        margin: 5% 0;
+        width: 100%;
+    }
+    .cake-items img {
+        width: 100%;
+        height: 100%;
+    }
+    .item-1 {
+        overflow: hidden;
+        margin: 0 1.5rem;
+    }
+    .cake-text {
+        width: 100%;
+        color: white;
+        background-color: var(--primary);
+        padding: 0.1rem;
+        position: absolute;
+        bottom: -11rem;
+        line-height: 2;
+        transition: 1s all ease;
+        cursor: pointer;
+    }
+    .cake-text:hover {
+        bottom: 0;
+    }
+    .leave-2 {
+        font-size: 30px;
+        width: 30%;
+        margin: 0 15%;
+    }
+    .button {
+        display: inline-block;
+        background-color: var(--primary);
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        border-radius: 50%;
+        position: absolute;
+        transition: all 1s ease-in-out;
+        z-index: 1441;
+        margin-top: 13%;
+        left: 70%;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 700px) {
+    .cake-items {
+        grid-template-rows: 100vh;
+    }
+}
